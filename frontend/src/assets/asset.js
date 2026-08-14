@@ -7,6 +7,11 @@ export const hero_img2 =
 export const hero_img3 =
   "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200&h=600&fit=crop&q=80";
 
+// =========== Payment Method Logos =============
+
+export const easypaisa = "/easypaisa.svg";
+export const jazz_cash = "/jazz_cash.svg";
+
 // ============ ICONS (Bootstrap Icons CDN) ============
 export const cart_icon =
   "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/cart.svg";
@@ -203,7 +208,8 @@ export const assets = {
   hero_img,
   hero_img2,
   hero_img3,
-
+  easypaisa,
+  jazz_cash,
   // Icons
   cart_icon,
   dropdown_icon,

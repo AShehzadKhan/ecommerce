@@ -1,11 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/shopContext";
 import Title from "../components/Title";
+import { assets } from "../assets/asset";
+import CartTotal from "../components/cartTotal";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { products, currency, cartItems } = useContext(ShopContext);
+  const { products, currency, cartItems, updateQuantity } =
+    useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const tempData = [];
     for (const itemId in cartItems) {
@@ -61,9 +65,45 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
+              <input
+                className="border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1"
+                type="number"
+                min={1}
+                defaultValue={item.quantity}
+                onChange={(e) =>
+                  e.target.value === "" || e.target.value === "1"
+                    ? null
+                    : updateQuantity(
+                        item._id,
+                        item.size,
+                        Number(e.target.value),
+                      )
+                }
+              />
+              <img
+                className="w-4 mr-4 sm:w-5 opacity-80 cursor-pointer"
+                src={assets.bin_icon}
+                alt=""
+                onClick={() => updateQuantity(item._id, item.size, 0)}
+              />
             </div>
           );
         })}
+      </div>
+
+      <div className="flex justify-end my-20">
+        <div className="w-full sm:w-112.5">
+          <CartTotal />
+
+          <div className="w-full text-end">
+            <button
+              onClick={() => navigate("/place-order")}
+              className="bg-black text-white text-sm my-8 px-8 py-3"
+            >
+              PROCEED TO CHECKOUT
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
