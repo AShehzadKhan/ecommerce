@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { ShopContext } from "../context/shopContext";
-import { assets } from "../assets/asset";
+import { ShopContext } from "../context/ShopContext";
+import { assets } from "../assets/assets.js";
 import Title from "../components/Title";
 import ProductItem from "../components/ProductItem";
 
@@ -66,7 +66,7 @@ const Collection = () => {
 
   useEffect(() => {
     applyFilter();
-  }, [category, subCategory, search, showSearch]);
+  }, [category, subCategory, search, showSearch, products]);
 
   useEffect(() => {
     sortProduct();
@@ -84,7 +84,7 @@ const Collection = () => {
           FILTERS
           <img
             src={assets.dropdown_icon}
-            className={`h-3 sm:hidden ${showFilter ? "" : "rotate-270"}`}
+            className={`h-3 sm:hidden ${showFilter ? "rotate-90" : ""}`}
             alt=""
           />
         </p>

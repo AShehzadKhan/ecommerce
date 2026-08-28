@@ -2,28 +2,33 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
-import authRoute from "./routes/authRoute.js";
-import productRoute from "./routes/productRoute.js";
+import connectCloudinary from "./config/cloudinary.js";
+import userRouter from "./routes/userRoute.js";
+import productRouter from "./routes/productRoute.js";
+import cartRouter from "./routes/cartRoute.js";
+import orderRouter from "./routes/orderRoute.js";
 
-dotenv.config();
-connectDB();
-
+// app config
 const app = express();
+dotenv.config();
+const port = process.env.PORT || 8000;
+connectDB();
+connectCloudinary();
 
-app.use(cors());
+// middlewares
 app.use(express.json());
+app.use(cors());
 
-const PORT = process.env.PORT || 8000;
+// api endpoints
+app.use("/api/user", userRouter);
+app.use("/api/product", productRouter);
+app.use("/api/cart", cartRouter);
+app.use("/api/order", orderRouter);
 
 app.get("/", (req, res) => {
-  res.send(
-    `<h1 style="text-align: center; font-size: xx-large;">Home Page</h1>`,
-  );
+  res.send("Server is running");
 });
 
-app.use("/api/auth", authRoute);
-app.use("/api/products", productRoute);
-
-app.listen(PORT, () => {
-  console.log(`Server is listening on http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is listening on port : ${port}`);
 });

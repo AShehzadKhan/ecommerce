@@ -1,4 +1,4 @@
-import { assets } from "../assets/asset";
+import { assets } from "../assets/assets.js";
 
 const Hero = () => {
   return (
@@ -21,11 +21,7 @@ const Hero = () => {
       </div>
 
       {/* Hero image */}
-      <img
-        className="w-full sm:w-1/2 hover:scale-110 transition ease-in-out"
-        src={assets.hero_img2}
-        alt=""
-      />
+      <img className="w-full sm:w-1/2" src={assets.hero_img} alt="" />
     </div>
   );
 };

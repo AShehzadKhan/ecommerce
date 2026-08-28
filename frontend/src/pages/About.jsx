@@ -1,4 +1,4 @@
-import { assets } from "../assets/asset";
+import { assets } from "../assets/assets.js";
 import Title from "../components/Title";
 
 const About = () => {
@@ -11,7 +11,7 @@ const About = () => {
       <div className="my-10 flex flex-col md:flex-row gap-16">
         <div>
           <img
-            src={assets.hero_img2}
+            src={assets.about_img}
             className="w-full h-80 md:max-w-112.5"
             alt=""
           />
@@ -26,16 +26,19 @@ const About = () => {
             comfort of their homes
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            tenetur, at voluptatem accusamus, libero dolore sed, asperiores
-            reprehenderit minus id laudantium numquam sit explicabo recusandae!
-            Est a nobis optio beatae.
+            We believe that the right fabric can transform an outfit and bring
+            every style to life. That’s why we focus on offering quality
+            materials, elegant designs, and a smooth shopping experience. From
+            timeless classics to the latest trends, we are committed to bringing
+            you fabrics that combine comfort, style, and lasting quality.
           </p>
           <b className="text-gray-800">Our Mission</b>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-            ducimus consectetur ab exercitationem iste asperiores explicabo.
-            Eius corrupti debitis aspernatur!
+            Our mission is to make quality fabrics easy to discover and shop
+            online while delivering an experience our customers can trust. We
+            strive to offer stylish and reliable products, excellent customer
+            service, and a seamless shopping journey that keeps our customers
+            coming back.
           </p>
         </div>
       </div>

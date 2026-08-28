@@ -1,6 +1,5 @@
-import { assets } from "../assets/asset";
+import { assets } from "../assets/assets.js";
 import Title from "../components/Title";
-import { Factory } from "lucide-react";
 const Contact = () => {
   return (
     <div>
@@ -9,7 +8,7 @@ const Contact = () => {
       </div>
 
       <div className="flex flex-col my-10 justify-center md:flex-row gap-10 mb-28">
-        <img className="w-full md:max-w-90" src={assets.w_jeans_2} alt="" />
+        <img className="w-full md:max-w-90" src={assets.contact_img} alt="" />
 
         <div className="flex flex-col justify-center items-start gap-6">
           <p className="font-semibold text-xl text-gray-600">OUR STORE</p>

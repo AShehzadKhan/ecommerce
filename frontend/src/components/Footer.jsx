@@ -7,9 +7,9 @@ const Footer = () => {
             Faizan Fabrics
           </h1>
           <p className="w-full md:w-2/3 text-gray-600">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem
-            odio id, earum nemo aperiam optio rerum dicta laudantium hic, vel
-            facilis sed?
+            Discover quality fabrics, elegant designs, and the latest styles at
+            Faizan Fabrics. We’re committed to bringing you beautiful, reliable
+            fabrics and a convenient online shopping experience.
           </p>
         </div>
 
